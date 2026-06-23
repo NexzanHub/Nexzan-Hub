@@ -9,7 +9,7 @@ st.title("🚀 Nexzan AI Modding Hub")
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
 except Exception as e:
     st.error("API Key belum diset di Streamlit Secrets! Silakan atur di menu Settings aplikasi kamu.")
     st.stop()
