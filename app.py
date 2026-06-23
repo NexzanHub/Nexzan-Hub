@@ -11,7 +11,7 @@ try:
     genai.configure(api_key=api_key)
     
     # Menggunakan model yang sudah terbukti tersedia di list kamu
-    model = genai.GenerativeModel('gemini-2.0-flash')
+    model = genai.GenerativeModel('gemini-2.0-flash-lite')
 except Exception as e:
     st.error(f"Error konfigurasi: {e}")
     st.stop()
