@@ -1,0 +1,126 @@
+-- [[ NEXZAN HUB - EXTERNAL UI TEMPLATE ]] --
+-- Simpan script ini di GitHub / Pastebin kamu
+
+local Fluent = loadstring(game:HttpGet("https://github.com/StyearX/Fluent-Modded/releases/download/Fluent/FluentPro"))()
+
+-- 1. THEME CONFIGURATION
+Fluent:RegisterCustomTheme("NexzanDark", {
+    Accent              = Color3.fromRGB(96, 205, 255),
+    AcrylicMain         = Color3.fromRGB(25, 25, 35),
+    AcrylicBorder       = Color3.fromRGB(60, 60, 80),
+    AcrylicGradient     = ColorSequence.new(Color3.fromRGB(20, 20, 30), Color3.fromRGB(15, 15, 25)),
+    AcrylicNoise        = 0.5,
+    TitleBarLine        = Color3.fromRGB(50, 50, 70),
+    Tab                 = Color3.fromRGB(30, 30, 45),
+    Element             = Color3.fromRGB(32, 32, 46),
+    ElementBorder       = Color3.fromRGB(60, 60, 85),
+    InElementBorder     = Color3.fromRGB(70, 70, 100),
+    ElementTransparency = 0,
+    ToggleSlider        = Color3.fromRGB(50, 50, 70),
+    ToggleToggled       = Color3.fromRGB(96, 205, 255),
+    SliderRail          = Color3.fromRGB(50, 50, 70),
+    DropdownFrame       = Color3.fromRGB(25, 25, 38),
+    DropdownHolder      = Color3.fromRGB(20, 20, 30),
+    DropdownBorder      = Color3.fromRGB(60, 60, 85),
+    DropdownOption      = Color3.fromRGB(35, 35, 50),
+    Keybind             = Color3.fromRGB(35, 35, 50),
+    Input               = Color3.fromRGB(22, 22, 32),
+    InputFocused        = Color3.fromRGB(15, 15, 25),
+    InputIndicator      = Color3.fromRGB(70, 70, 100),
+    InputIndicatorFocus = Color3.fromRGB(96, 205, 255),
+    Dialog              = Color3.fromRGB(20, 20, 30),
+    DialogHolder        = Color3.fromRGB(15, 15, 25),
+    DialogHolderLine    = Color3.fromRGB(50, 50, 70),
+    DialogButton        = Color3.fromRGB(28, 28, 40),
+    DialogButtonBorder  = Color3.fromRGB(60, 60, 85),
+    DialogBorder        = Color3.fromRGB(60, 60, 85),
+    DialogInput         = Color3.fromRGB(22, 22, 32),
+    DialogInputLine     = Color3.fromRGB(70, 70, 100),
+    Text                = Color3.fromRGB(255, 255, 255),
+    SubText             = Color3.fromRGB(160, 160, 190),
+    Hover               = Color3.fromRGB(40, 40, 60),
+    HoverChange         = 0.04,
+    ShineEnabled        = true,
+    StrokeShine         = false,
+    StrokeDark          = Color3.fromRGB(50, 50, 70),
+    IconColor           = Color3.fromRGB(96, 205, 255),
+    IconSize            = 18,
+    Background          = nil,
+    BackgroundTransparency = 0,
+    ThemeAccentColors   = { Color3.fromRGB(96, 205, 255) },
+})
+
+-- 2. CREATE WINDOW
+local Window = Fluent:CreateWindow({
+    Title            = "Nexzan Hub",
+    SubTitle         = "dev : Nexzan Hub",
+    TabWidth         = 130,
+    Size             = UDim2.fromOffset(460, 400),
+    Acrylic          = false,
+    Theme            = "NexzanDark", 
+    MinimizeKey      = Enum.KeyCode.LeftControl,
+    UserInfo         = true,
+    UserInfoTop      = false,
+    UserInfoTitle    = "Nexzan",
+    UserInfoSubtitle = "Developer",
+    UserInfoColor    = Color3.fromRGB(96, 205, 255),
+    Search           = false,
+})
+
+-- 3. TABS & SECTIONS
+local MainTab     = Window:AddTab({ Title = "Main",     Icon = "solar/home-bold" })
+local SettingsTab = Window:AddTab({ Title = "Settings", Icon = "gravity/archive" })
+
+local MainSection = MainTab:AddSection("Main Features")
+
+-- 4. MINIMIZE BUTTON LINGKARAN KECIL (40x40) LOGO NH
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+if LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("NexzanMinimizeUI") then
+    LocalPlayer.PlayerGui.NexzanMinimizeUI:Destroy()
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "NexzanMinimizeUI"
+ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local MinimizeBtn = Instance.new("ImageButton")
+MinimizeBtn.Name = "MinimizeButton"
+MinimizeBtn.Parent = ScreenGui
+MinimizeBtn.Size = UDim2.fromOffset(40, 40)
+MinimizeBtn.Position = UDim2.new(0.03, 0, 0.35, 0)
+MinimizeBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+MinimizeBtn.BorderSizePixel = 0
+MinimizeBtn.Active = true
+MinimizeBtn.Draggable = true
+
+Instance.new("UICorner", MinimizeBtn).CornerRadius = UDim.new(1, 0)
+local UIStroke = Instance.new("UIStroke", MinimizeBtn)
+UIStroke.Thickness = 2
+UIStroke.Color = Color3.fromRGB(96, 205, 255)
+
+local TextLabel = Instance.new("TextLabel", MinimizeBtn)
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Text = "NH"
+TextLabel.TextColor3 = Color3.fromRGB(96, 205, 255)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.TextSize = 12
+
+MinimizeBtn.MouseButton1Click:Connect(function()
+    Window:Minimize() 
+end)
+
+Window:SelectTab(1)
+
+-- ====================================================================
+-- KUNCI UTAMA: Mengirimkan data UI keluar agar bisa diisi fitur dari luar
+-- ====================================================================
+return {
+    MainSection = MainSection,
+    MainTab = MainTab,
+    Window = Window,
+    Fluent = Fluent
+}
