@@ -169,7 +169,7 @@ function Library:CreateWindow(Config)
 	local MinimizedBtn = Instance.new("TextButton")
 	MinimizedBtn.Size = UDim2.new(0, 140, 0, 32)
 	MinimizedBtn.Position = UDim2.new(0.5, -70, 0, 20)
-	MinimizedBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+	MinimizedBtn.BackgroundColor3 = Color3.fromRGB(150,70,255)
 	MinimizedBtn.BackgroundTransparency = 0.1
 	MinimizedBtn.Text = "🚀 Open Nexzan UI"
 	MinimizedBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -187,7 +187,7 @@ function Library:CreateWindow(Config)
 	local MainWindow = Instance.new("Frame")
 	MainWindow.Size = UDim2.new(0, 550, 0, 330)
 	MainWindow.Position = UDim2.new(0.5, -275, 0.5, -165)
-	MainWindow.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+	MainWindow.BackgroundColor3 = Color3.fromRGB(22,18,35)
 	MainWindow.BackgroundTransparency = 0.15
 	MainWindow.Active = true
 	MainWindow.Parent = ScreenGui
@@ -264,7 +264,7 @@ function Library:CreateWindow(Config)
 	---------------------------------------------------------
 	local Sidebar = Instance.new("Frame")
 	Sidebar.Size = UDim2.new(0, 180, 1, 0)
-	Sidebar.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+	Sidebar.BackgroundColor3 = Color3.fromRGB(25,20,40)
 	Sidebar.BackgroundTransparency = 0.1
 	Sidebar.BorderSizePixel = 0
 	Sidebar.Parent = MainWindow
@@ -274,7 +274,7 @@ function Library:CreateWindow(Config)
 	local SidebarPatch = Instance.new("Frame", Sidebar)
 	SidebarPatch.Size = UDim2.new(0, 15, 1, 0)
 	SidebarPatch.Position = UDim2.new(1, -15, 0, 0)
-	SidebarPatch.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	SidebarPatch.BackgroundColor3 = Color3.fromRGB(25,20,40)
 	SidebarPatch.BackgroundTransparency = 0.1
 	SidebarPatch.BorderSizePixel = 0
 
@@ -412,7 +412,7 @@ function Library:CreateWindow(Config)
 		local TabBtn = Instance.new("TextButton", TabContainer)
 		TabBtn.Size = UDim2.new(1, -16, 0, 32)
 		TabBtn.BackgroundTransparency = 1
-		TabBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabBtn.BackgroundColor3 = Color3.fromRGB(170,85,255)
 		TabBtn.Text = ""
 		Instance.new("UICorner", TabBtn).CornerRadius = UDim.new(0, 4)
 		
@@ -482,12 +482,12 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateButton(text, desc, callback)
 			local FeatureFrame = Instance.new("Frame", ContentPage)
 			FeatureFrame.Size = UDim2.new(1, -10, 0, 46)
-			FeatureFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			FeatureFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", FeatureFrame).CornerRadius = UDim.new(0, 5)
 			
 			local BtnStroke = Instance.new("UIStroke", FeatureFrame)
-			BtnStroke.Color = Color3.fromRGB(35, 35, 35)
+			BtnStroke.Color = Color3.fromRGB(170,85,255)
 			BtnStroke.Thickness = 1
 			
 			local Title = Instance.new("TextLabel", FeatureFrame)
@@ -513,7 +513,7 @@ function Library:CreateWindow(Config)
 			local ActionBtn = Instance.new("TextButton", FeatureFrame)
 			ActionBtn.Size = UDim2.new(0, 65, 0, 24)
 			ActionBtn.Position = UDim2.new(1, -75, 0.5, -12)
-			ActionBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ActionBtn.BackgroundColor3 = Color3.fromRGB(170,85,255)
 			ActionBtn.Text = "Execute"
 			ActionBtn.TextColor3 = Color3.fromRGB(20, 20, 20)
 			ActionBtn.Font = Enum.Font.SourceSansBold
@@ -544,12 +544,12 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateToggle(text, desc, default, callback)
 			local FeatureFrame = Instance.new("Frame", ContentPage)
 			FeatureFrame.Size = UDim2.new(1, -10, 0, 46)
-			FeatureFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			FeatureFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", FeatureFrame).CornerRadius = UDim.new(0, 5)
 			
 			local TglStroke = Instance.new("UIStroke", FeatureFrame)
-			TglStroke.Color = Color3.fromRGB(35, 35, 35)
+			TglStroke.Color = Color3.fromRGB(170,85,255)
 			TglStroke.Thickness = 1
 			
 			local Title = Instance.new("TextLabel", FeatureFrame)
@@ -575,7 +575,7 @@ function Library:CreateWindow(Config)
 			local ToggleBg = Instance.new("TextButton", FeatureFrame)
 			ToggleBg.Size = UDim2.new(0, 36, 0, 20)
 			ToggleBg.Position = UDim2.new(1, -46, 0.5, -10)
-			ToggleBg.BackgroundColor3 = default and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(60, 60, 60)
+			ToggleBg.BackgroundColor3 = default and Color3.fromRGB(170,85,255) or Color3.fromRGB(60, 60, 60)
 			ToggleBg.Text = ""
 			Instance.new("UICorner", ToggleBg).CornerRadius = UDim.new(1, 0)
 
@@ -603,12 +603,12 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateSlider(text, min, max, default, callback)
 			local SliderFrame = Instance.new("Frame", ContentPage)
 			SliderFrame.Size = UDim2.new(1, -10, 0, 50)
-			SliderFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			SliderFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", SliderFrame).CornerRadius = UDim.new(0, 5)
 			
 			local SldStroke = Instance.new("UIStroke", SliderFrame)
-			SldStroke.Color = Color3.fromRGB(35, 35, 35)
+			SldStroke.Color = Color3.fromRGB(170,85,255)
 			SldStroke.Thickness = 1
 
 			local Title = Instance.new("TextLabel", SliderFrame)
@@ -680,13 +680,13 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateDropdown(text, options, callback)
 			local DropdownFrame = Instance.new("Frame", ContentPage)
 			DropdownFrame.Size = UDim2.new(1, -10, 0, 40)
-			DropdownFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			DropdownFrame.BackgroundTransparency = 0.3
 			DropdownFrame.ClipsDescendants = true
 			Instance.new("UICorner", DropdownFrame).CornerRadius = UDim.new(0, 5)
 			
 			local DropStroke = Instance.new("UIStroke", DropdownFrame)
-			DropStroke.Color = Color3.fromRGB(35, 35, 35)
+			DropStroke.Color = Color3.fromRGB(170,85,255)
 			DropStroke.Thickness = 1
 
 			local Title = Instance.new("TextLabel", DropdownFrame)
@@ -754,7 +754,7 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateTextbox(text, placeholder, callback)
 			local InputFrame = Instance.new("Frame", ContentPage)
 			InputFrame.Size = UDim2.new(1, -10, 0, 46)
-			InputFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			InputFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", InputFrame).CornerRadius = UDim.new(0, 5)
 			
@@ -782,8 +782,8 @@ function Library:CreateWindow(Config)
 			Instance.new("UICorner", InputBox).CornerRadius = UDim.new(0, 5)
 
 			local BoxStroke = Instance.new("UIStroke", InputBox)
-			BoxStroke.Color = Color3.fromRGB(70, 70, 70)
-
+			BoxStroke.Color = 
+Color3.fromRGB(170,85,255)
 			InputBox.Focused:Connect(function()
 				TweenService:Create(BoxStroke, TweenInfo.new(0.15), {Color = Color3.fromRGB(255, 255, 255)}):Play()
 			end)
@@ -797,7 +797,7 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateKeybind(text, defaultKey, callback)
 			local KeybindFrame = Instance.new("Frame", ContentPage)
 			KeybindFrame.Size = UDim2.new(1, -10, 0, 46)
-			KeybindFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			KeybindFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", KeybindFrame).CornerRadius = UDim.new(0, 5)
 			
@@ -848,7 +848,7 @@ function Library:CreateWindow(Config)
 			local LabelFrame = Instance.new("Frame", ContentPage)
 			local FrameHeight = isParagraph and 54 or 30
 			LabelFrame.Size = UDim2.new(1, -10, 0, FrameHeight)
-			LabelFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			LabelFrame.BackgroundTransparency = 0.6
 			Instance.new("UICorner", LabelFrame).CornerRadius = UDim.new(0, 5)
 			
@@ -875,12 +875,12 @@ function Library:CreateWindow(Config)
 		function TabFunctions:CreateColorpicker(text, defaultColor, callback)
 			local CpFrame = Instance.new("Frame", ContentPage)
 			CpFrame.Size = UDim2.new(1, -10, 0, 46)
-			CpFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			FeatureFrame.BackgroundColor3 = Color3.fromRGB(35, 25, 50)
 			CpFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", CpFrame).CornerRadius = UDim.new(0, 5)
 			
 			local CpStroke = Instance.new("UIStroke", CpFrame)
-			CpStroke.Color = Color3.fromRGB(35, 35, 35)
+			CpStroke.Color = Color3.fromRGB(170,85,255)
 			CpStroke.Thickness = 1
 
 			local Title = Instance.new("TextLabel", CpFrame)
@@ -963,7 +963,7 @@ function Library:CreateWindow(Config)
 		KeyFrame.Name = "KeyFrame"
 		KeyFrame.Size = UDim2.new(0, 320, 0, 200)
 		KeyFrame.Position = UDim2.new(0.5, -160, 0.5, -100)
-		KeyFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+		KeyFrame.BackgroundColor3 = Color3.fromRGB(28,20,40)
 		KeyFrame.BackgroundTransparency = 0.25
 		KeyFrame.BorderSizePixel = 0
 		KeyFrame.Active = true
@@ -1024,7 +1024,7 @@ function Library:CreateWindow(Config)
 		local GetKeyBtn = Instance.new("TextButton", KeyFrame)
 		GetKeyBtn.Size = UDim2.new(0, 120, 0, 32)
 		GetKeyBtn.Position = UDim2.new(0, 30, 1, -50)
-		GetKeyBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		GetKeyBtn.BackgroundColor3 = Color3.fromRGB(150,70,255)
 		GetKeyBtn.Text = "GetKey"
 		GetKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 		GetKeyBtn.TextSize = 14
