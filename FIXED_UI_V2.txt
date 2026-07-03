@@ -116,17 +116,13 @@ function Library:CreateWindow(Config)
 
 		local NotifFrame = Instance.new("Frame")
 		NotifFrame.Size = UDim2.new(1, 0, 0, 0)
-		NotifFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+		NotifFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 		NotifFrame.BackgroundTransparency = 0.15
 		NotifFrame.ClipsDescendants = true
 		NotifFrame.Parent = NotificationArea
 
 		local Corner = Instance.new("UICorner", NotifFrame)
 		Corner.CornerRadius = UDim.new(0, 8)
-
-		local Stroke = Instance.new("UIStroke", NotifFrame)
-		Stroke.Color = Color3.fromRGB(35, 35, 35)
-		Stroke.Thickness = 1
 
 		local TitleLabel = Instance.new("TextLabel")
 		TitleLabel.Size = UDim2.new(1, -20, 0, 20)
@@ -173,7 +169,7 @@ function Library:CreateWindow(Config)
 	local MinimizedBtn = Instance.new("TextButton")
 	MinimizedBtn.Size = UDim2.new(0, 140, 0, 32)
 	MinimizedBtn.Position = UDim2.new(0.5, -70, 0, 20)
-	MinimizedBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	MinimizedBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 	MinimizedBtn.BackgroundTransparency = 0.1
 	MinimizedBtn.Text = "🚀 Open Nexzan UI"
 	MinimizedBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -183,9 +179,6 @@ function Library:CreateWindow(Config)
 	MinimizedBtn.Parent = ScreenGui
 
 	Instance.new("UICorner", MinimizedBtn).CornerRadius = UDim.new(0, 8)
-	local MinStroke = Instance.new("UIStroke", MinimizedBtn)
-	MinStroke.Color = Color3.fromRGB(35, 35, 35)
-	MinStroke.Thickness = 1.5
 	MakeDraggable(MinimizedBtn)
 
 	---------------------------------------------------------
@@ -194,7 +187,7 @@ function Library:CreateWindow(Config)
 	local MainWindow = Instance.new("Frame")
 	MainWindow.Size = UDim2.new(0, 550, 0, 330)
 	MainWindow.Position = UDim2.new(0.5, -275, 0.5, -165)
-	MainWindow.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	MainWindow.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 	MainWindow.BackgroundTransparency = 0.15
 	MainWindow.Active = true
 	MainWindow.Parent = ScreenGui
@@ -271,7 +264,7 @@ function Library:CreateWindow(Config)
 	---------------------------------------------------------
 	local Sidebar = Instance.new("Frame")
 	Sidebar.Size = UDim2.new(0, 180, 1, 0)
-	Sidebar.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Sidebar.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 	Sidebar.BackgroundTransparency = 0.1
 	Sidebar.BorderSizePixel = 0
 	Sidebar.Parent = MainWindow
@@ -765,10 +758,6 @@ function Library:CreateWindow(Config)
 			InputFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", InputFrame).CornerRadius = UDim.new(0, 5)
 			
-			local BoxFrameStroke = Instance.new("UIStroke", InputFrame)
-			BoxFrameStroke.Color = Color3.fromRGB(35, 35, 35)
-			BoxFrameStroke.Thickness = 1
-
 			local Title = Instance.new("TextLabel", InputFrame)
 			Title.Size = UDim2.new(0.5, 0, 1, 0)
 			Title.Position = UDim2.new(0, 10, 0, 0)
@@ -812,10 +801,6 @@ function Library:CreateWindow(Config)
 			KeybindFrame.BackgroundTransparency = 0.3
 			Instance.new("UICorner", KeybindFrame).CornerRadius = UDim.new(0, 5)
 			
-			local KeyStroke = Instance.new("UIStroke", KeybindFrame)
-			KeyStroke.Color = Color3.fromRGB(35, 35, 35)
-			KeyStroke.Thickness = 1
-
 			local Title = Instance.new("TextLabel", KeybindFrame)
 			Title.Size = UDim2.new(0.6, 0, 1, 0)
 			Title.Position = UDim2.new(0, 10, 0, 0)
@@ -978,7 +963,7 @@ function Library:CreateWindow(Config)
 		KeyFrame.Name = "KeyFrame"
 		KeyFrame.Size = UDim2.new(0, 320, 0, 200)
 		KeyFrame.Position = UDim2.new(0.5, -160, 0.5, -100)
-		KeyFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+		KeyFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 		KeyFrame.BackgroundTransparency = 0.25
 		KeyFrame.BorderSizePixel = 0
 		KeyFrame.Active = true
@@ -1017,7 +1002,7 @@ function Library:CreateWindow(Config)
 		Subtitle.Size = UDim2.new(1, 0, 0, 15)
 		Subtitle.Position = UDim2.new(0, 0, 0, 40)
 		Subtitle.BackgroundTransparency = 1
-		Subtitle.Text = "Key?Pencet GetKey"
+		Subtitle.Text = "Key? Pencet GetKey"
 		Subtitle.TextColor3 = Color3.fromRGB(200, 200, 200)
 		Subtitle.TextSize = 13
 		Subtitle.Font = Enum.Font.SourceSansItalic
