@@ -19,7 +19,7 @@
 
 local CONFIG = {
     API_BASE = "https://nexzanhubresethwid.netlify.app/",
-    ORIGINAL_SCRIPT_URL = "https://raw.githubusercontent.com/NexzanHub/Nexzan-Hub/refs/heads/main/AllScript.lua",
+    ORIGINAL_SCRIPT_URL = "https://files.catbox.moe/t33u7c.lua",
     RESET_PORTAL_URL = nil, -- kalau nil, otomatis pakai API_BASE .. "/?tab=reset"
     SCRIPT_NAME = "Nexzan Hub",
     HWID_LEASE_HOURS = 24,
